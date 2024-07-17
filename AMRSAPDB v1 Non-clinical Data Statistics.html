@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMRSAPDB v1 Non-clinical Data Statistics</title>
+    <link href="./AMRSAPDB v1 Non-clinical Data Statistics_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./AMRSAPDB v1 Non-clinical Data Statistics_files/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <script src="./AMRSAPDB v1 Non-clinical Data Statistics_files/jquery-3.6.0.min.js.download"></script>
+    <script src="./AMRSAPDB v1 Non-clinical Data Statistics_files/bootstrap.bundle.min.js.download"></script>
+    <script src="./AMRSAPDB v1 Non-clinical Data Statistics_files/jquery.dataTables.min.js.download"></script>
+    <script src="./AMRSAPDB v1 Non-clinical Data Statistics_files/dataTables.bootstrap5.min.js.download"></script>
+    <script src="./AMRSAPDB v1 Non-clinical Data Statistics_files/chart.js.download"></script>
+    <link rel="shortcut icon" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/logo.png" type="image/x-icon">
+</head>
+
+<body style="background-color: #F0F8FF;" data-new-gr-c-s-check-loaded="14.1179.0" data-gr-ext-installed="">
+    <nav class="navbar navbar-expand-sm navbar-dark  fixed-top" style="background-color: #440000;">
+        <div class="container-fluid">
+            <span><a class="navbar-brand fs-3" href="https://bblserver.org.in/tamrsar/amrsapdb/amrsapdb-home">AMRSAPDB v1 <i>Non-clinical</i></a>
+                <br>
+                <a class="navbar-brand" href="https://bblserver.org.in/tamrsar/tamrsar-home" style="font-size:100%;">The Anti-MRSA Resource</a>
+            </span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/amrsapdb-home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-statistics-non-clinical#" role="button" data-bs-toggle="dropdown">Search</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://bblserver.org.in/tamrsar/amrsapdb/clinical/amrsapdb-clinical">In AMRSAPDB v1 <i>Clinical</i></a></li>
+                            <li><a class="dropdown-item" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-non-clinical">In AMRSAPDB v1 <i>Non-clinical</i></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-browse-all-data-non-clinical">Browse</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-statistics-non-clinical#" role="button" data-bs-toggle="dropdown">Tools</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://amrsapdb-peptide-sequence-alignment-toolbox.streamlit.app/">Peptide Sequence Alignment Toolbox</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://amrsapdb-peptide-feature-calculation-toolbox.streamlit.app/">Peptide Feature Calculation Toolbox</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-statistics-non-clinical">Statistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-download-non-clinical">Downloads</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-news">News/Updates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/developers">Developers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-tutorial-non-clinical">Tutorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <br><br><br><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm text-center" style="margin-top: 2%;">
+                <h4 style="font-weight: 500;">AMRSAPDB v1 <i>Non-clinical</i> Overall &amp; Unique Data Statistics</h4>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="width: 98%;">
+        <div class="row">
+            <div class="col-sm" style="margin-top: 2%;">
+                <div style="margin-top: 0.3%; font-size: small;">
+                    <b style="font-weight: 500;">Note: </b><i>The initial scale is set to 10 of Y axis. Because the difference between lowest number of records and highest
+                        number of records is very high. The graph is designed this way for better visualizations.
+                        Click on the <b style="font-weight: 500;">"Rescale X Axis"</b> or <b style="font-weight: 500;">"Rescale Y Axis"</b> button to rescale the plot. Click on <b style="font-weight: 500;">"Rescale to Initial"</b> to bring the plot to it's initial point.</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Overall Data Distribution by Peptide Source
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxis()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxis()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxes()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChart" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Overall Data Distribution by Length
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxisba()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxisba()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxesba()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartba" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Overall Data Distribution by Molecular Weight
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxisbp()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxisbp()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxesbp()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartbp" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Overall Data Distribution by Net Charge
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxiscl()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxiscl()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxescl()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartcl" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Unique Data Distribution by Peptide Source
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxisea()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxisea()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxesea()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartea" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Unique Data Distribution by Length
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxispg()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxispg()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxespg()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartpg" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="margin-top: 2%;">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Unique Data Distribution by Molecular Weight
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxispt()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxispt()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxespt()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartpt" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="container-fluid">
+                    <div class="row" style="padding-left: 0rem;">
+                        <div class="col-sm text-start" style="font-weight: 400; font-size:x-large">
+                            Unique Data Distribution by Net Charge
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row p-2 border border-2">
+                        <div class="col-sm">
+                            <div class="text-end mb-3">
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleXAxisdr()">Rescale X Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="rescaleYAxisdr()">Rescale Y Axis</button>
+                                <button style="font-size:x-small; padding: 0.2% 0.5% 0.2% 0.5%; border: 1px solid #440000; background-color: #F1F1F1; color: #440000; border-radius: 0px;" onclick="resetAxesdr()">Reset to Initial</button>
+                            </div>
+                            <div id="chartContainer">
+                                <canvas id="lenChartdr" style="display: block; box-sizing: border-box; height: 334px; width: 668px;" width="835" height="417"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var myChart;
+
+        function getRandomRGB() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColor() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxis() {
+            var newMax = Math.floor(Math.random() * 1327) + 430;
+            myChart.options.scales.y.max = newMax;
+            myChart.update();
+        }
+
+        function rescaleXAxis() {
+            var newMax = Math.floor(Math.random() * 10);
+            myChart.options.scales.x.max = newMax;
+            myChart.update();
+        }
+
+        function resetAxes() {
+            myChart.options.scales.x.max = 8;
+            myChart.options.scales.y.max = 10;
+            myChart.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 1327; i++) {
+            bgColors.push(getRandomRGB());
+            borderColors.push(getRandomBorderColor());
+        }
+
+        var ctx = document.getElementById('lenChart').getContext('2d');
+        myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Animalia', 'Bacteria', 'Monera', 'Plantae', 'Pisces', 'Reptile', 'Synthetic construct', 'Virus', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [324,13,26,8,52,4,1327,15],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 8,
+                        title: {
+                            display: true,
+                            text: 'Source',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChart2;
+
+        function getRandomRGBba() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorba() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxisba() {
+            var newMax = Math.floor(Math.random() * 821) + 330;
+            myChart2.options.scales.y.max = newMax;
+            myChart2.update();
+        }
+
+        function rescaleXAxisba() {
+            var newMax = Math.floor(Math.random() * 17);
+            myChart2.options.scales.x.max = newMax;
+            myChart2.update();
+        }
+
+        function resetAxesba() {
+            myChart2.options.scales.x.max = 14;
+            myChart2.options.scales.y.max = 10;
+            myChart2.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 821; i++) {
+            bgColors.push(getRandomRGBba());
+            borderColors.push(getRandomBorderColorba());
+        }
+
+        var ctx = document.getElementById('lenChartba').getContext('2d');
+        myChart2 = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['1-10', '10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90', '90-100', '100-200', '200-300', '300-400', '400-500', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [374,821,417,155,69,14,4,0,0,4,2,0,0,0],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 14,
+                        title: {
+                            display: true,
+                            text: 'Length',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChartbp;
+
+        function getRandomRGBbp() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorbp() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxisbp() {
+            var newMax = Math.floor(Math.random() * 653) + 230;
+            myChartbp.options.scales.y.max = newMax;
+            myChartbp.update();
+        }
+
+        function rescaleXAxisbp() {
+            var newMax = Math.floor(Math.random() * 10);
+            myChartbp.options.scales.x.max = newMax;
+            myChartbp.update();
+        }
+
+        function resetAxesbp() {
+            myChartbp.options.scales.x.max = 7;
+            myChartbp.options.scales.y.max = 10;
+            myChartbp.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 653; i++) {
+            bgColors.push(getRandomRGBbp());
+            borderColors.push(getRandomBorderColorbp());
+        }
+
+        var ctx = document.getElementById('lenChartbp').getContext('2d');
+        myChartbp = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['1-1000 DA', '1000-2000 DA', '2000-3000 DA', '3000-4000 DA', '4000-5000 DA', '5000-10000 DA', '10000-15000 DA', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [197,653,593,99,134,25,6],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 7,
+                        title: {
+                            display: true,
+                            text: 'Molecular Weight',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChartcl;
+
+        function getRandomRGBcl() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorcl() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxiscl() {
+            var newMax = Math.floor(Math.random() * 935) + 330;
+            myChartcl.options.scales.y.max = newMax;
+            myChartcl.update();
+        }
+
+        function rescaleXAxiscl() {
+            var newMax = Math.floor(Math.random() * 8);
+            myChartcl.options.scales.x.max = newMax;
+            myChartcl.update();
+        }
+
+        function resetAxescl() {
+            myChartcl.options.scales.x.max = 5;
+            myChartcl.options.scales.y.max = 10;
+            myChartcl.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 935; i++) {
+            bgColors.push(getRandomRGBcl());
+            borderColors.push(getRandomBorderColorcl());
+        }
+
+        var ctx = document.getElementById('lenChartcl').getContext('2d');
+        myChartcl = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['-5 >= to < 0', '0 >= to < 5', '5 >= to < 10', '10 >= to < 15', '15 >= to < 20', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [113,935,612,41,5],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 5,
+                        title: {
+                            display: true,
+                            text: 'Net Charge',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+
+        var myChartea;
+
+        function getRandomRGBea() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorea() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxisea() {
+            var newMax = Math.floor(Math.random() * 1009);
+            myChartea.options.scales.y.max = newMax;
+            myChartea.update();
+        }
+
+        function rescaleXAxisea() {
+            var newMax = Math.floor(Math.random() * 11);
+            myChartea.options.scales.x.max = newMax;
+            myChartea.update();
+        }
+
+        function resetAxesea() {
+            myChartea.options.scales.x.max = 8;
+            myChartea.options.scales.y.max = 10;
+            myChartea.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 779; i++) {
+            bgColors.push(getRandomRGBea());
+            borderColors.push(getRandomBorderColorea());
+        }
+
+        var ctx = document.getElementById('lenChartea').getContext('2d');
+        myChartea = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Animalia', 'Bacteria', 'Monera', 'Plantae', 'Pisces', 'Reptile', 'Synthetic construct', 'Virus', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [202,4,17,8,27,4,779,3],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 8,
+                        title: {
+                            display: true,
+                            text: 'Source',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChartpg;
+
+        function getRandomRGBpg() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorpg() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxispg() {
+            var newMax = Math.floor(Math.random() * 534) + 200;
+            myChartpg.options.scales.y.max = newMax;
+            myChartpg.update();
+        }
+
+        function rescaleXAxispg() {
+            var newMax = Math.floor(Math.random() * 17);
+            myChartpg.options.scales.x.max = newMax;
+            myChartpg.update();
+        }
+
+        function resetAxespg() {
+            myChartpg.options.scales.x.max = 14;
+            myChartpg.options.scales.y.max = 10;
+            myChartpg.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 534; i++) {
+            bgColors.push(getRandomRGBpg());
+            borderColors.push(getRandomBorderColorpg());
+        }
+
+        var ctx = document.getElementById('lenChartpg').getContext('2d');
+        myChartpg = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['1-10', '10-20', '20-30', '30-40', '40-50', '50-60', '60-70', '70-80', '80-90', '90-100', '100-200', '200-300', '300-400', '400-500', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [205,534,244,86,26,8,3,0,0,1,1,0,0,0],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 14,
+                        title: {
+                            display: true,
+                            text: 'Length',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChartpt;
+
+        function getRandomRGBpt() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColorpt() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxispt() {
+            var newMax = Math.floor(Math.random() * 411) + 180;
+            myChartpt.options.scales.y.max = newMax;
+            myChartpt.update();
+        }
+
+        function rescaleXAxispt() {
+            var newMax = Math.floor(Math.random() * 10);
+            myChartpt.options.scales.x.max = newMax;
+            myChartpt.update();
+        }
+
+        function resetAxespt() {
+            myChartpt.options.scales.x.max = 7;
+            myChartpt.options.scales.y.max = 10;
+            myChartpt.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 411; i++) {
+            bgColors.push(getRandomRGBpt());
+            borderColors.push(getRandomBorderColorpt());
+        }
+
+        var ctx = document.getElementById('lenChartpt').getContext('2d');
+        myChartpt = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['1-1000 DA', '1000-2000 DA', '2000-3000 DA', '3000-4000 DA', '4000-5000 DA', '5000-10000 DA', '10000-15000 DA', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [114,411,343,77,57,16,2],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 7,
+                        title: {
+                            display: true,
+                            text: 'Molecular Weight',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        var myChartdr;
+
+        function getRandomRGBdr() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 0.2)`;
+        }
+
+        function getRandomBorderColordr() {
+            var r = Math.floor(Math.random() * 256);
+            var g = Math.floor(Math.random() * 256);
+            var b = Math.floor(Math.random() * 256);
+            return `rgba(${ r }, ${ g }, ${ b }, 1)`;
+        }
+
+        
+        function rescaleYAxisdr() {
+            var newMax = Math.floor(Math.random() * 570) + 150;
+            myChartdr.options.scales.y.max = newMax;
+            myChartdr.update();
+        }
+
+        function rescaleXAxisdr() {
+            var newMax = Math.floor(Math.random() * 6);
+            myChartdr.options.scales.x.max = newMax;
+            myChartdr.update();
+        }
+
+        function resetAxesdr() {
+            myChartdr.options.scales.x.max = 5;
+            myChartdr.options.scales.y.max = 10;
+            myChartdr.update();
+        }
+
+
+        var bgColors = [];
+        var borderColors = [];
+        for (var i = 0; i < 570; i++) {
+            bgColors.push(getRandomRGBdr());
+            borderColors.push(getRandomBorderColordr());
+        }
+
+        var ctx = document.getElementById('lenChartdr').getContext('2d');
+        myChartdr = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['-5 >= to < 0', '0 >= to < 5', '5 >= to < 10', '10 >= to < 15', '15 >= to < 20', ],
+                datasets: [{
+                    label: '# of Record(s)',
+                    data: [97,570,319,28,4],
+                    backgroundColor: bgColors,
+                    borderColor: borderColors,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: {
+                            display: true,
+                            text: 'Number of Records',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    x: {
+                        beginAtZero: true,
+                        max: 5,
+                        title: {
+                            display: true,
+                            text: 'Net Charge',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+        <br><br><br>
+    <div class="container-fluid fixed-bottom" style="background-color: #440000;">
+        <div class="row">
+            <div class="col-sm text-center text-white p-1" style="font-size: small;">
+                © 2024, B&amp;BL, DoAS, IIIT-A, India | Sitemap: <a href="https://bblserver.org.in/tamrsar/tamrsar-home" style="all: unset; cursor: pointer;">TAMRSAR Home</a> --&gt; <a href="https://bblserver.org.in/tamrsar/amrsapdb/amrsapdb-home" style="all: unset; cursor: pointer;">AMRSAPDB v1 Home</a>
+                --&gt; <a href="https://bblserver.org.in/tamrsar/amrsapdb/non-clinical/amrsapdb-statistics-non-clinical" style="all: unset; cursor: pointer;">AMRSAPDB v1 <i>Non-clinical</i> Statistics</a>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
